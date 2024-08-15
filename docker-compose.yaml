@@ -19,7 +19,7 @@ services:
   alembic:
     image: fastapi-base:latest
     environment:
-      SQL_DATABASE_URL: 'postgres://default:mULFz7hC1QcX@ep-shrill-queen-a1y4f8fx-pooler.ap-southeast-1.aws.neon.tech:5432/verceldb'
+      SQL_DATABASE_URL: 'postgresql://default:mULFz7hC1QcX@ep-shrill-queen-a1y4f8fx-pooler.ap-southeast-1.aws.neon.tech:5432/verceldb'
       SECRET_KEY: ${SECRET_KEY}
     command: [ "alembic", "upgrade", "head" ]
     depends_on:
@@ -29,7 +29,7 @@ services:
     image: fastapi-base:latest
     environment:
       PROJECT_NAME: ${PROJECT_NAME}
-      SQL_DATABASE_URL: 'postgres://default:mULFz7hC1QcX@ep-shrill-queen-a1y4f8fx-pooler.ap-southeast-1.aws.neon.tech:5432/verceldb'
+      SQL_DATABASE_URL: 'postgresql://default:mULFz7hC1QcX@ep-shrill-queen-a1y4f8fx-pooler.ap-southeast-1.aws.neon.tech:5432/verceldb'
       SECRET_KEY: ${SECRET_KEY}
     ports:
       - "8000:8000"
