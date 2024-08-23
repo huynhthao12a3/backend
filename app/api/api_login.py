@@ -21,9 +21,9 @@ class LoginRequest(BaseModel):
 def login_access_token(form_data: LoginRequest, user_service: UserService = Depends()):
     user = user_service.authenticate(email=form_data.username, password=form_data.password)
     if not user:
-        raise HTTPException(status_code=400, detail='Incorrect email or password')
+        raise HTTPException(status_code=400, detail='Sai email hoặc mật khẩu')
     elif not user.is_active:
-        raise HTTPException(status_code=401, detail='Inactive user')
+        raise HTTPException(status_code=401, detail='Tài khoản chưa kích hoạt')
 
     user.last_login = datetime.now()
     db.session.commit()
