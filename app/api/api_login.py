@@ -13,8 +13,8 @@ router = APIRouter()
 
 
 class LoginRequest(BaseModel):
-    username: EmailStr = 'long.dh@teko.vn'
-    password: str = 'secret123'
+    username: str = 'huynhthao@gmail.com' #EmailStr
+    password: str = '123456'
 
 
 @router.post('', response_model=DataResponse[Token])
