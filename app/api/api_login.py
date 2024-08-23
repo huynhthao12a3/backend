@@ -29,5 +29,6 @@ def login_access_token(form_data: LoginRequest, user_service: UserService = Depe
     db.session.commit()
 
     return DataResponse().success_response({
-        'access_token': create_access_token(user_id=user.id)
+        'access_token': create_access_token(user_id=user.id),
+        'full_name': user.full_name,
     })
